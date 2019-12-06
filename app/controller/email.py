@@ -9,20 +9,21 @@ class EmailController:
 
     @staticmethod
     def validate(address):
-        regex_check = RegexChecker(address).validate()
-        regex_result = RegexChecker(address).result()
+        regex_result = RegexChecker(address).validate()
 
         result = {
             'email': address,
-            'valid': regex_check,
+            'valid': regex_result['valid'],
             'validators': {
                 'regex': regex_result
             }
         }
 
-        if regex_check:
-            local, domain = RegexChecker(address).parse()
-            dns_result = DnsChecker(domain).result()
+        if 'domain' in regex_result:
+            dns_result = DnsChecker(regex_result['domain']).validate()
             result['validators']['domain'] = dns_result
+            result['valid'] = result['valid'] and dns_result['valid']
+
+        # Todo make codes as constants
         result_code = 200
         return result, result_code

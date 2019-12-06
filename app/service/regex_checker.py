@@ -9,16 +9,17 @@ class RegexChecker:
     def __init__(self, address):
         self.address = address
         self.match = re.match(self.FORMAT, address)
+        self.result = {
+            'valid': False,
+        }
 
     def validate(self):
-        return self.match is not None
-
-    def result(self):
-        result = {
-            'valid': self.validate()
-        }
-        return result
-
-    def parse(self):
-        if self.validate():
-            return self.match.group('local'), self.match.group('domain')
+        if self.match is None:
+            self.result['reason'] = 'Incorrect syntax according to RFC 5322'
+        else:
+            self.result.update({
+                'valid': True,
+                'local': self.match.group('local'),
+                'domain': self.match.group('domain'),
+            })
+        return self.result
