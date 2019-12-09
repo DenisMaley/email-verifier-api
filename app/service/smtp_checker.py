@@ -1,5 +1,6 @@
-import socket
 import smtplib
+import socket
+
 from .dns_checker import DnsChecker
 
 

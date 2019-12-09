@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EmailValidation",
+  "type": "object",
+  "properties": {
+    "email": {
+      "_comment": "The proper way to set 'format': 'email' instead of 'minLength': 5 but since it is assesment to validate, regex check is implemented separately",
+      "type": "string",
+      "minLength": 5
+    }
+  },
+  "required": [
+    "email"
+  ]
+}

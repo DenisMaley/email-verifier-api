@@ -1,7 +1,7 @@
-from service.regex_checker import RegexChecker
-from service.dns_checker import DnsChecker
-from service.smtp_checker import SmtpChecker
 from model.email import Email
+from service.dns_checker import DnsChecker
+from service.regex_checker import RegexChecker
+from service.smtp_checker import SmtpChecker
 
 
 class EmailController:
