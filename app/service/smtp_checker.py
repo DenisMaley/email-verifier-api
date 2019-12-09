@@ -5,6 +5,7 @@ from .dns_checker import DnsChecker
 
 
 class SmtpChecker:
+    NAME = 'smtp'
     # Check https://www.greenend.org.uk/rjk/tech/smtpreplies.html#RCPT
     # for the documentation
     SUCCESS_CODE = 250

@@ -2,6 +2,7 @@ import dns.resolver
 
 
 class DnsChecker:
+    NAME = 'domain'
     def __init__(self, email):
         self.email = email
         self.result = {

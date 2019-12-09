@@ -1,4 +1,7 @@
+from http import HTTPStatus
+
 from controller.email import EmailController
+from response.email_validation import EmailValidationResponse
 from .base_resource import BaseResource
 
 
@@ -14,4 +17,4 @@ class EmailValidation(BaseResource):
         if valid:
             return EmailController.validate(data['email'])
         else:
-            return {'valid': False, 'validators': data}, 400
+            return EmailValidationResponse(validators=data, status=HTTPStatus.BAD_REQUEST).output()
