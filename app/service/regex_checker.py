@@ -2,6 +2,7 @@ import re
 
 
 class RegexChecker:
+    NAME = 'regex'
     # General Email Regex (RFC 5322 Official Standard)
     # For details check http://emailregex.com/
     FORMAT = '(^(?P<local>[a-zA-Z0-9_.+-]+)@(?P<domain>[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)$)'
