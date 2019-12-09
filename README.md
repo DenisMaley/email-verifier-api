@@ -4,7 +4,7 @@
 
 ## What is this project about?
 
-This is the project to validate and verify an email with validators such as Regex, DNS
+This is the project to validate and verify an email using Regex, DNS, SMTP
 
 ## Requirements
 

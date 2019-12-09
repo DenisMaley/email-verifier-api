@@ -7,3 +7,6 @@ class Email:
 
     def __repr__(self):
         return self.address
+
+    def __str__(self):
+        return self.address

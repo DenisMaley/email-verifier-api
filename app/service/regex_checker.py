@@ -22,4 +22,5 @@ class RegexChecker:
                 'local': self.match.group('local'),
                 'domain': self.match.group('domain'),
             })
+
         return self.result
