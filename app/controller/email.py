@@ -1,5 +1,3 @@
-from http import HTTPStatus
-
 from model.email import Email
 from response.email_validation import EmailValidationResponse
 from service.dns_checker import DnsChecker
@@ -29,6 +27,5 @@ class EmailController:
 
         validator_results = {k: v['valid'] for (k, v) in response.validators.items()}
         response.valid = all(validator_results.values())
-        response.status = HTTPStatus.OK
 
         return response.output()
