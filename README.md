@@ -21,7 +21,7 @@ docker-compose build
 docker-compose up
 ```
 
-To stop the app:
+To stop the app after you finished to work wit it:
 
 ```sh
 docker-compose down
@@ -46,6 +46,15 @@ To validate e-mail run
 curl -d '{"email":"abc@xyz.com"}' -H "Content-Type: application/json" -X POST http://localhost:5000/email/validate
 ```
 
+or use Postman:
+
+![Postman screenshot](https://i.gyazo.com/bfdf60cc8f6c1e8e99daa6b9b5e8f383.png)
+
+## Tests
+To run all tests
+```bash
+$ docker-compose run app python -m unittest discover -s test
+```
 
 [Docker Install]:  https://docs.docker.com/install/
 [Docker Compose Install]: https://docs.docker.com/compose/install/
