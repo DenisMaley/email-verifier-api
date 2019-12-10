@@ -48,6 +48,8 @@ curl -d '{"email":"abc@xyz.com"}' -H "Content-Type: application/json" -X POST ht
 
 or use Postman:
 
+![Postman screenshot](https://i.gyazo.com/bfdf60cc8f6c1e8e99daa6b9b5e8f383.png)
+
 ## Tests
 To run all tests
 ```bash
